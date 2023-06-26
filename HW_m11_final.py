@@ -42,7 +42,7 @@ class Phone(Field):
         if len(new_value) <= 12 and new_value.isdigit():
             self.__value = new_value
         else:
-            raise TypeError("Please, check your phone number. It contain only digits.")
+            print("Please, check your phone number. It contain only digits.")
 
 
 class Birthday(Field):
@@ -63,8 +63,8 @@ class Birthday(Field):
         try:
             date_birthday = datetime.strptime(value, '%d.%m.%Y')
             self.__value = date_birthday
-        except:
-            raise ValueError("Please, enter correct birthday in format DD.MM.YYYY")
+        except ValueError:
+            print("Please, enter correct birthday in format DD.MM.YYYY")
 
 
 class Record:
